@@ -1,0 +1,13 @@
+{
+  "serviceName": "jenkins-ecs-service",
+  "taskDefinition": "jenkins-ecs-task-latest",
+  "loadBalancers": [
+    {
+      "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:022171895308:targetgroup/jenkins-ecs-target-group/7dbc8d6167a293b3",
+      "containerName": "jenkins-ecs-container-latest",
+      "containerPort": 3000
+    }
+  ],
+  "desiredCount": 1,
+  "role": "ecsServiceRole"
+}
